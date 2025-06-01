@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -55,7 +55,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
     // Navigation
@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.moshi)
     implementation(libs.moshi.core)
-    kapt(libs.moshi.kotlin.codegen) // For Moshi annotation processing
+    ksp(libs.moshi.kotlin.codegen) // For Moshi annotation processing
     implementation(libs.okhttp.logging.interceptor) // Optional: for logging API requests/responses
 
     // Coil
