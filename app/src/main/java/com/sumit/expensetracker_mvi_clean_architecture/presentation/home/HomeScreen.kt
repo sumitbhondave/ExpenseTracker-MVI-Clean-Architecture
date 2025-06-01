@@ -21,6 +21,7 @@ import com.sumit.expensetracker_mvi_clean_architecture.data.model.MovieDto
 
 const val TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
@@ -70,8 +71,13 @@ fun HomeScreen(
                             }
                         }
                     } else if (state.isLoading && state.movies.isNotEmpty()) {
-                         item {
-                            Box(modifier = Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center){
+                        item {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
                                 CircularProgressIndicator()
                             }
                         }
@@ -95,7 +101,7 @@ fun HomeScreen(
         if (visibleItemsInfo.isNotEmpty() && state.canLoadMore && !state.isLoading) {
             val lastVisibleItemIndex = visibleItemsInfo.last().index
             if (lastVisibleItemIndex == state.movies.size - 1) { // If last item is visible
-                 // Debounce or ensure not already loading
+                // Debounce or ensure not already loading
                 viewModel.processIntent(HomeIntent.LoadMoreMovies)
             }
         }
@@ -144,7 +150,7 @@ fun MovieItem(
                     Text(text = "Release: $it", style = MaterialTheme.typography.labelSmall)
                 }
                 movie.voteAverage?.let {
-                     Text(text = "Rating: $it/10", style = MaterialTheme.typography.labelSmall)
+                    Text(text = "Rating: $it/10", style = MaterialTheme.typography.labelSmall)
                 }
             }
         }

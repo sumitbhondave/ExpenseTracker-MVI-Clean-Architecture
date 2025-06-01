@@ -56,7 +56,7 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.hilt.navigation.compose)
 
     // Navigation
     implementation(libs.androidx.navigation.compose)
@@ -64,7 +64,7 @@ dependencies {
     // Retrofit & Moshi
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.moshi)
-    implementation(libs.moshi.core)
+    implementation(libs.moshi.kotlin)
     ksp(libs.moshi.kotlin.codegen) // For Moshi annotation processing
     implementation(libs.okhttp.logging.interceptor) // Optional: for logging API requests/responses
 
