@@ -1,7 +1,7 @@
 package com.sumit.expensetracker_mvi_clean_architecture.di
 
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+// import com.squareup.moshi.kotlin.KotlinJsonAdapterFactory // Temporarily remove
 import com.sumit.expensetracker_mvi_clean_architecture.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
@@ -21,7 +21,7 @@ object NetworkModule {
     @Singleton
     fun provideMoshi(): Moshi {
         return Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
+            // .add(KotlinJsonAdapterFactory()) // Temporarily remove
             .build()
     }
 
