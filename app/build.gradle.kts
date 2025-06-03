@@ -65,6 +65,8 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.moshi)
     implementation(libs.moshi.core)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.kotlin.reflect)
     ksp(libs.moshi.kotlin.codegen) // For Moshi annotation processing
     implementation(libs.okhttp.logging.interceptor) // Optional: for logging API requests/responses
 
